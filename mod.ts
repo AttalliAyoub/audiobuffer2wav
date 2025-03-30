@@ -1,4 +1,19 @@
-/** This function encodes AudioBuffer to WAV. */
+/**
+ * This function encodes AudioBuffer to WAV.
+ *
+ * @param {AudioBuffer} buffer - the audiobuffer data that cames form the audio context, when downloaded or you got on the browsers web-audio-api
+ * @returns {ArrayBuffer} - the encoded result with wav format.
+ * @example
+ * ```ts
+ * const resp = await fetch('https://github.com/Experience-Monks/audiobuffer-to-wav/raw/refs/heads/master/demo/bluejean_short.mp3');
+ * const arrayBuffer = await resp.arrayBuffer();
+ * const context = new AudioContext();
+ * const audioBuffer = await new Promise<AudioBuffer>((res, rej) => context.decodeAudioData(arrayBuffer, res, rej));
+ * await context.close();
+ * const wav = audioBuffer2Wav(audioBuffer);
+ * ```
+*/
+
 export function audioBuffer2Wav(buffer: AudioBuffer, opt?: { float32?: boolean | undefined; }): ArrayBuffer {
   opt = opt || {};
   const numChannels = buffer.numberOfChannels;
