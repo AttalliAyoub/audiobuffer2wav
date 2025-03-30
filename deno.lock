@@ -1,23 +1,163 @@
 {
   "version": "4",
   "specifiers": {
-    "jsr:@std/assert@1": "1.0.12",
-    "jsr:@std/internal@^1.0.6": "1.0.6"
+    "jsr:@mutefish/deno-assets-module@0.0.4": "0.0.4",
+    "jsr:@mutefish/web-audio-api@0.1.4": "0.1.4",
+    "jsr:@mutefish/web-audio-api@~0.1.4": "0.1.4",
+    "jsr:@std/assert@^1.0.12": "1.0.12",
+    "jsr:@std/encoding@1": "1.0.8",
+    "jsr:@std/internal@^1.0.6": "1.0.6",
+    "jsr:@zip-js/zip-js@2.7.48": "2.7.48",
+    "npm:@types/node@*": "22.12.0",
+    "npm:xhr@*": "2.6.0"
   },
   "jsr": {
+    "@mutefish/deno-assets-module@0.0.4": {
+      "integrity": "f5ba7db80dbc13e415f90dbfd2144eae125ed5efb1c084df4688fb90d79330d7",
+      "dependencies": [
+        "jsr:@zip-js/zip-js"
+      ]
+    },
+    "@mutefish/web-audio-api@0.1.4": {
+      "integrity": "1f86535ca81e7d032b24732f5cb2d9218f670eabc45d48635c6ac60eabccea45",
+      "dependencies": [
+        "jsr:@mutefish/deno-assets-module",
+        "jsr:@std/encoding"
+      ]
+    },
     "@std/assert@1.0.12": {
       "integrity": "08009f0926dda9cbd8bef3a35d3b6a4b964b0ab5c3e140a4e0351fbf34af5b9a",
       "dependencies": [
         "jsr:@std/internal"
       ]
     },
+    "@std/encoding@1.0.8": {
+      "integrity": "a6c8f3f933ab1bed66244f435d1dc0fd23a888e07195532122ddc3d5f8f0e6b4"
+    },
     "@std/internal@1.0.6": {
       "integrity": "9533b128f230f73bd209408bb07a4b12f8d4255ab2a4d22a1fd6d87304aca9a4"
+    },
+    "@zip-js/zip-js@2.7.48": {
+      "integrity": "652809664ae9b25ea7d81c5a9fc1447f4fe70446578b5424ce4531d881d89d0f"
     }
+  },
+  "npm": {
+    "@types/node@22.12.0": {
+      "integrity": "sha512-Fll2FZ1riMjNmlmJOdAyY5pUbkftXslB5DgEzlIuNaiWhXd00FhWxVC/r4yV/4wBb9JfImTu+jiSvXTkJ7F/gA==",
+      "dependencies": [
+        "undici-types"
+      ]
+    },
+    "dom-walk@0.1.2": {
+      "integrity": "sha512-6QvTW9mrGeIegrFXdtQi9pk7O/nSK6lSdXW2eqUspN5LWD7UTji2Fqw5V2YLjBpHEoU9Xl/eUWNpDeZvoyOv2w=="
+    },
+    "global@4.4.0": {
+      "integrity": "sha512-wv/LAoHdRE3BeTGz53FAamhGlPLhlssK45usmGFThIi4XqnBmjKQ16u+RNbP7WvigRZDxUsM0J3gcQ5yicaL0w==",
+      "dependencies": [
+        "min-document",
+        "process"
+      ]
+    },
+    "is-function@1.0.2": {
+      "integrity": "sha512-lw7DUp0aWXYg+CBCN+JKkcE0Q2RayZnSvnZBlwgxHBQhqt5pZNVy4Ri7H9GmmXkdu7LUthszM+Tor1u/2iBcpQ=="
+    },
+    "min-document@2.19.0": {
+      "integrity": "sha512-9Wy1B3m3f66bPPmU5hdA4DR4PB2OfDU/+GS3yAB7IQozE3tqXaVv2zOjgla7MEGSRv95+ILmOuvhLkOK6wJtCQ==",
+      "dependencies": [
+        "dom-walk"
+      ]
+    },
+    "parse-headers@2.0.6": {
+      "integrity": "sha512-Tz11t3uKztEW5FEVZnj1ox8GKblWn+PvHY9TmJV5Mll2uHEwRdR/5Li1OlXoECjLYkApdhWy44ocONwXLiKO5A=="
+    },
+    "process@0.11.10": {
+      "integrity": "sha512-cdGef/drWFoydD1JsMzuFf8100nZl+GT+yacc2bEced5f9Rjk4z+WtFUTBu9PhOi9j/jfmBPu0mMEY4wIdAF8A=="
+    },
+    "undici-types@6.20.0": {
+      "integrity": "sha512-Ny6QZ2Nju20vw1SRHe3d9jVu6gJ+4e3+MMpqu7pqE5HT6WsTSlce++GQmK5UXS8mzV8DSYHrQH+Xrf2jVcuKNg=="
+    },
+    "xhr@2.6.0": {
+      "integrity": "sha512-/eCGLb5rxjx5e3mF1A7s+pLlR6CGyqWN91fv1JgER5mVWg1MZmlhBvy9kjcsOdRk8RrIujotWyJamfyrp+WIcA==",
+      "dependencies": [
+        "global",
+        "is-function",
+        "parse-headers",
+        "xtend"
+      ]
+    },
+    "xtend@4.0.2": {
+      "integrity": "sha512-LKYU1iAXJXUgAXn9URjiu+MWhyUXHsvfp7mcuYm9dSUKK0/CjtrUwFAxD82/mCWbtLsGjFIad0wIsod4zrTAEQ=="
+    }
+  },
+  "redirects": {
+    "https://esm.sh/@types/av@~0.4.4/index.d.ts": "https://esm.sh/@types/av@0.4.4/index.d.ts",
+    "https://esm.sh/@types/bindings@~1.5.5/index.d.ts": "https://esm.sh/@types/bindings@1.5.5/index.d.ts",
+    "https://esm.sh/@types/debug@~4.1.12/index.d.ts": "https://esm.sh/@types/debug@4.1.12/index.d.ts",
+    "https://esm.sh/@types/underscore@~1.13.0/index.d.mts": "https://esm.sh/@types/underscore@1.13.0/index.d.mts",
+    "https://esm.sh/@types/underscore@~1.8.20/index.d.ts": "https://esm.sh/@types/underscore@1.8.20/index.d.ts",
+    "https://esm.sh/aac@0.1.x?target=denonext": "https://esm.sh/aac@0.1.3?target=denonext",
+    "https://esm.sh/abc@0.5.x?target=denonext": "https://esm.sh/abc@0.5.1?target=denonext",
+    "https://esm.sh/alac@0.1.x?target=denonext": "https://esm.sh/alac@0.1.0?target=denonext",
+    "https://esm.sh/async@0.9.x?target=denonext": "https://esm.sh/async@0.9.2?target=denonext",
+    "https://esm.sh/av@0.4.x?target=denonext": "https://esm.sh/av@0.4.9?target=denonext",
+    "https://esm.sh/av@~0.4.0?target=denonext": "https://esm.sh/av@0.4.9?target=denonext",
+    "https://esm.sh/bindings@^1.3.0?target=denonext": "https://esm.sh/bindings@1.5.0?target=denonext",
+    "https://esm.sh/chai@1.7.x?target=denonext": "https://esm.sh/chai@1.7.2?target=denonext",
+    "https://esm.sh/debug@^4.0.0?target=denonext": "https://esm.sh/debug@4.4.0?target=denonext",
+    "https://esm.sh/flac@0.3.x?target=denonext": "https://esm.sh/flac@0.3.0?target=denonext",
+    "https://esm.sh/fsa@0.5.x?target=denonext": "https://esm.sh/fsa@0.5.1?target=denonext",
+    "https://esm.sh/mp3@0.1.x?target=denonext": "https://esm.sh/mp3@0.1.0?target=denonext",
+    "https://esm.sh/ms@^2.1.3?target=denonext": "https://esm.sh/ms@2.1.3?target=denonext",
+    "https://esm.sh/pcm-boilerplate@0.1.x?target=denonext": "https://esm.sh/pcm-boilerplate@0.1.1?target=denonext",
+    "https://esm.sh/speaker?target=denonext": "https://esm.sh/speaker@0.5.5?target=denonext",
+    "https://esm.sh/supports-color?target=denonext": "https://esm.sh/supports-color@10.0.0?target=denonext",
+    "https://esm.sh/underscore@1.4.x?target=denonext": "https://esm.sh/underscore@1.4.4?target=denonext",
+    "https://esm.sh/underscore@1.8.x?target=denonext": "https://esm.sh/underscore@1.8.3?target=denonext"
+  },
+  "remote": {
+    "https://esm.sh/aac@0.1.3/denonext/aac.mjs": "35aab60bddbbfedefe651fde6856d548f329aafd23525d80134c3805700e5e7b",
+    "https://esm.sh/aac@0.1.3?target=denonext": "6247ecffc8c691c89f8f3f95e3354f6e1c29c9623eb4140dc15c57089516aee3",
+    "https://esm.sh/abc@0.5.1/denonext/abc.mjs": "8d7baa42c49de093ea4770f40074670bc215713793e4cbe8b1612d7d12f6e3c3",
+    "https://esm.sh/abc@0.5.1?target=denonext": "e083409f1cfe448a2aa78248992d88f268e070e52f2e447ed4144f196009fa96",
+    "https://esm.sh/alac@0.1.0/denonext/alac.mjs": "3ba9d47c37357217cdf8f87e860b8208e0a22b390240dfa37f2309acfc39169c",
+    "https://esm.sh/alac@0.1.0?target=denonext": "012de17c223801600c156c1c5e84abbbf78517a34025e45fc008f7f766425caf",
+    "https://esm.sh/assertion-error@1.0.0/denonext/assertion-error.mjs": "70a3c043522b8b0df59f8a32f6a589de3c1fa843003f4e12fa1bc361adaddabc",
+    "https://esm.sh/async@0.9.2/denonext/async.mjs": "f8233a76c86f054f43f9e629411da44d7a760d21c355b2d8fa6a01dc71dc0142",
+    "https://esm.sh/async@0.9.2?target=denonext": "15a840ee5c5f8d65ba056e2155226ff949f544c298ea359e3a52d4337b477656",
+    "https://esm.sh/av@0.4.9/denonext/av.mjs": "3c45f81a38e9c9a61584ba8e70620d77e4be5f4b31b8d47814b3cadb0b18dd7f",
+    "https://esm.sh/av@0.4.9?target=denonext": "68969635b4a7ee033b1f7684e867a092aa20ba103af195f3ea42828e201062ef",
+    "https://esm.sh/bindings@1.5.0/denonext/bindings.mjs": "e4cf60819f9cfbd005ba93a34174320c018173b505a1bcaf5431483b405b5558",
+    "https://esm.sh/bindings@1.5.0?target=denonext": "9cff5cf649c297562fb16520ccdb9bcdb158a744112f187d41cdf5e7a1d92985",
+    "https://esm.sh/chai@1.7.2/denonext/chai.mjs": "ac915a6695a83cd99056be8166b4a656b053c4d5f096f0e77c2c40e2e8e63f62",
+    "https://esm.sh/chai@1.7.2?target=denonext": "0c52436bb959cd0d51296b5ebcad758807e4f6a9b465053d70b4dbeff3ef515b",
+    "https://esm.sh/debug@4.4.0/denonext/debug.mjs": "3077d1ff15cfc5b7baee65b0c00b3200aef8ab51ddddfa960972957c347c1cee",
+    "https://esm.sh/debug@4.4.0?target=denonext": "dc29873ca5518385fcbddb2b2fa0f3b31dc6463ba52bdd790818683b9dbdc6ad",
+    "https://esm.sh/file-uri-to-path@1.0.0/denonext/file-uri-to-path.mjs": "597a05ad6580b13ea58bdbc547ad2a47bd9cc5ba8ae9935dbfd270f84d97f286",
+    "https://esm.sh/flac@0.3.0/denonext/flac.mjs": "fb83f41fef0cc1702aa7aa08cb7f5a46ace679a60b2e8ba8b613be1638cc79d7",
+    "https://esm.sh/flac@0.3.0?target=denonext": "11c23873597c20492c9c4d18df05ef7413765219cd0e3cac7d9d2a86a870a237",
+    "https://esm.sh/fsa@0.5.1/denonext/fsa.mjs": "a84e4d5f38546277e575033fb038987aa8086d895dcde095656ac2dbf697ccc0",
+    "https://esm.sh/fsa@0.5.1?target=denonext": "fee8ac4290a0f0f157ce8b302cf004c78d5a290319b491bfbf87caff494cc2dc",
+    "https://esm.sh/mp3@0.1.0/denonext/mp3.mjs": "e892bd17d335826ab7697db9b8b6408a43d34aa6563a5411eae0cb0712401def",
+    "https://esm.sh/mp3@0.1.0?target=denonext": "5e13e1e90f15f17ae20791daf06047431acca9a112dd2c10eb6e899685197fab",
+    "https://esm.sh/ms@2.1.3/denonext/ms.mjs": "9039464da1f4ae1c2042742d335c82556c048bbe49449b5d0cd5198193afa147",
+    "https://esm.sh/ms@2.1.3?target=denonext": "36f5aa7503ff0ff44ce9e3155a60362d8d3ae5db8db048be5764a3a515b6a263",
+    "https://esm.sh/pcm-boilerplate@0.1.1/denonext/pcm-boilerplate.mjs": "ea0452d6116c746e20b94b1ec6914f9a02db43834df3edd1f31938cfb259dcb7",
+    "https://esm.sh/pcm-boilerplate@0.1.1?target=denonext": "7aad771c82b32c91c9bfd58e53436441995559c60201415c9b506a526c14de1c",
+    "https://esm.sh/speaker@0.5.5/denonext/speaker.mjs": "29090b54ffb27aaf2c3bc65d8179a4681515b387fbdc6f41747b52432fb8c28e",
+    "https://esm.sh/speaker@0.5.5?target=denonext": "9141b3e3cc616fd669c7579548d122f3b3d0745b9c96153fd222c1c63613767f",
+    "https://esm.sh/supports-color@10.0.0/denonext/supports-color.mjs": "239cd39d0828e1a018dee102748da869b1b75c38fe6a9c0c8f0bd4ffbd3e1ea1",
+    "https://esm.sh/supports-color@10.0.0?target=denonext": "4895255248e4ba0cbcce9437003dccf3658b1ac1d1e8eba5225fb8194c454ee1",
+    "https://esm.sh/underscore@1.4.4/denonext/underscore.mjs": "48e1762f67c7f2c8ff5c44ebfa6670010421e70f7f88b681ba642dd82a4a73bb",
+    "https://esm.sh/underscore@1.4.4?target=denonext": "c7386bf2aa57543b61502c16b6b74029568ee0231504f47d7bc48ef6da332a34",
+    "https://esm.sh/underscore@1.8.3/denonext/underscore.mjs": "d6c507217d65ea38f066744dee6f6fc6376a877c60287aac55896dd1fae391f3",
+    "https://esm.sh/underscore@1.8.3?target=denonext": "4a43c5199746df83b2044a7386c8e25685153ece7cc79fb1e689d2c62e4fcf2c",
+    "https://esm.sh/web-audio-api@0.2.2": "811fb89033cda7b23d2bf738bd80ad1673a20cad2f9cd1da0413c6abe583c625",
+    "https://esm.sh/web-audio-api@0.2.2/denonext/web-audio-api.mjs": "6327bbd4c284927da460b9273ba9c032d26d06c340231575ca96b9f1180941f2"
   },
   "workspace": {
     "dependencies": [
-      "jsr:@std/assert@1"
+      "jsr:@mutefish/web-audio-api@~0.1.4",
+      "jsr:@std/assert@^1.0.12"
     ]
   }
 }

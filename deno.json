@@ -1,19 +1,20 @@
 {
   "name": "@attalliayoub/audiobuffer2wav",
+  "license": "MIT",
   "version": "0.1.0",
   "exports": "./mod.ts",
   "tasks": {
-    "dev": "deno test --watch"
+    "dev": "deno test --watch --allow-write --allow-read --allow-ffi --allow-net"
   },
-  "license": "MIT",
   "imports": {
-    "@std/assert": "jsr:@std/assert@1"
+    "@mutefish/web-audio-api": "jsr:@mutefish/web-audio-api@^0.1.4",
+    "@std/assert": "jsr:@std/assert@^1.0.12"
   },
   "compilerOptions": {
     "lib": [
-      "deno.window",
+      "esnext",
       "dom",
-      "dom.iterable"
+      "deno.ns"
     ]
   }
 }

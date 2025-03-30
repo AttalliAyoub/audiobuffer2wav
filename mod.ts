@@ -1,4 +1,4 @@
-export function audioBufferToWav(buffer: AudioBuffer, opt: { float32?: boolean | undefined; }) {
+export function audioBuffer2Wav(buffer: AudioBuffer, opt?: { float32?: boolean | undefined; }) {
   opt = opt || {};
   const numChannels = buffer.numberOfChannels;
   const sampleRate = buffer.sampleRate
