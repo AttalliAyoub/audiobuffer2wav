@@ -1,8 +1,8 @@
 # audiobuffer2wav
 
-The code for this has been adapted from npm audiobuffer-to-wav
-
 Encodes the contents of an [AudioBuffer](https://developer.mozilla.org/en-US/docs/Web/API/AudioBuffer) from the WebAudio API as WAVE. Supports 16-bit PCM and 32-bit float data.
+
+The code for this has been adapted from npm audiobuffer-to-wav
 
 The code for this has been adapted from the export feature of [Recorder.js](https://github.com/mattdiamond/Recorderjs).
 
