@@ -1,4 +1,4 @@
-export function audioBuffer2Wav(buffer: AudioBuffer, opt?: { float32?: boolean | undefined; }) {
+export function audioBuffer2Wav(buffer: AudioBuffer, opt?: { float32?: boolean | undefined; }): ArrayBuffer {
   opt = opt || {};
   const numChannels = buffer.numberOfChannels;
   const sampleRate = buffer.sampleRate
@@ -12,7 +12,7 @@ export function audioBuffer2Wav(buffer: AudioBuffer, opt?: { float32?: boolean |
   return encodeWAV(result, format, sampleRate, numChannels, bitDepth)
 }
 
-function encodeWAV(samples: Float32Array, format: 3 | 1, sampleRate: number, numChannels: number, bitDepth: 32 | 16) {
+function encodeWAV(samples: Float32Array, format: 3 | 1, sampleRate: number, numChannels: number, bitDepth: 32 | 16): ArrayBuffer {
   const bytesPerSample = bitDepth / 8
   const blockAlign = numChannels * bytesPerSample
 
@@ -54,7 +54,7 @@ function encodeWAV(samples: Float32Array, format: 3 | 1, sampleRate: number, num
   return buffer
 }
 
-function interleave(inputL: Float32Array, inputR: Float32Array) {
+function interleave(inputL: Float32Array, inputR: Float32Array): Float32Array {
   const length = inputL.length + inputR.length
   const result = new Float32Array(length)
 
@@ -69,20 +69,20 @@ function interleave(inputL: Float32Array, inputR: Float32Array) {
   return result
 }
 
-function writeFloat32(output: DataView<ArrayBuffer>, offset: number, input: Float32Array) {
+function writeFloat32(output: DataView<ArrayBuffer>, offset: number, input: Float32Array): void {
   for (let i = 0; i < input.length; i++, offset += 4) {
     output.setFloat32(offset, input[i], true)
   }
 }
 
-function floatTo16BitPCM(output: DataView<ArrayBuffer>, offset: number, input: Float32Array) {
+function floatTo16BitPCM(output: DataView<ArrayBuffer>, offset: number, input: Float32Array): void {
   for (let i = 0; i < input.length; i++, offset += 2) {
     const s = Math.max(-1, Math.min(1, input[i]))
     output.setInt16(offset, s < 0 ? s * 0x8000 : s * 0x7FFF, true)
   }
 }
 
-function writeString(view: DataView<ArrayBuffer>, offset: number, str: string) {
+function writeString(view: DataView<ArrayBuffer>, offset: number, str: string): void {
   for (let i = 0; i < str.length; i++) {
     view.setUint8(offset + i, str.charCodeAt(i))
   }
