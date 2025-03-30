@@ -1,3 +1,4 @@
+/** This function encodes AudioBuffer to WAV. */
 export function audioBuffer2Wav(buffer: AudioBuffer, opt?: { float32?: boolean | undefined; }): ArrayBuffer {
   opt = opt || {};
   const numChannels = buffer.numberOfChannels;
