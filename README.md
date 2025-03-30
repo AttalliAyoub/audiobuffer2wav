@@ -51,4 +51,4 @@ By default, exports with 16-bit PCM (format: 1). You can specify `opt.float32` i
 
 ## License
 
-MIT, see [LICENSE.md](http://github.com/Jam3/audiobuffer-to-wav/blob/master/LICENSE.md) for details.
+MIT, see [LICENSE](http://github.com/AttalliAyoub/audiobuffer2wav/blob/main/LICENSE) for details.
