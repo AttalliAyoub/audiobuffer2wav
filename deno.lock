@@ -3,7 +3,7 @@
   "specifiers": {
     "jsr:@mutefish/deno-assets-module@0.0.4": "0.0.4",
     "jsr:@mutefish/web-audio-api@~0.1.4": "0.1.4",
-    "jsr:@std/assert@^1.0.12": "1.0.12",
+    "jsr:@std/assert@1.0.12": "1.0.12",
     "jsr:@std/encoding@1": "1.0.8",
     "jsr:@std/internal@^1.0.6": "1.0.6",
     "jsr:@zip-js/zip-js@2.7.48": "2.7.48",
@@ -53,7 +53,7 @@
   "workspace": {
     "dependencies": [
       "jsr:@mutefish/web-audio-api@~0.1.4",
-      "jsr:@std/assert@^1.0.12"
+      "jsr:@std/assert@1.0.12"
     ]
   }
 }

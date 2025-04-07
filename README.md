@@ -1,6 +1,7 @@
 # audiobuffer2wav
 
-Encodes the contents of an [AudioBuffer](https://developer.mozilla.org/en-US/docs/Web/API/AudioBuffer) from the WebAudio API as WAVE. Supports 16-bit PCM and 32-bit float data.
+Encodes the contents of an [AudioBuffer](https://developer.mozilla.org/en-US/docs/Web/API/AudioBuffer) from the WebAudio API as WAVE.
+Supports 16-bit PCM and 32-bit float data.
 
 The code for this has been adapted from npm audiobuffer-to-wav
 
@@ -17,16 +18,20 @@ deno add jsr:@attalliayoub/audiobuffer2wav
 ## Example
 
 ```ts
-import { AudioContext } from '@mutefish/web-audio-api';
+import { AudioContext } from "@mutefish/web-audio-api";
 import { assertEquals } from "@std/assert";
 import { audioBuffer2Wav } from "./mod.ts";
 
 // request the MP3 as binary
-const resp = await fetch('https://github.com/Experience-Monks/audiobuffer-to-wav/raw/refs/heads/master/demo/bluejean_short.mp3');
+const resp = await fetch(
+	"https://github.com/Experience-Monks/audiobuffer-to-wav/raw/refs/heads/master/demo/bluejean_short.mp3",
+);
 const arrayBuffer = await resp.arrayBuffer();
 const context = new AudioContext();
 // decode the MP3 into an AudioBuffer
-const audioBuffer = await new Promise<AudioBuffer>((res, rej) => context.decodeAudioData(arrayBuffer, res, rej));
+const audioBuffer = await new Promise<AudioBuffer>((res, rej) =>
+	context.decodeAudioData(arrayBuffer, res, rej)
+);
 await context.close();
 // encode AudioBuffer to WAV
 const wav = audioBuffer2Wav(audioBuffer);
